@@ -1,0 +1,11 @@
+set $output_main "Acer Technologies SA270 0x000077A5"
+set $output_sub  "Dell Inc. DELL E177FP WH3186B53MNS"
+
+output $output_main {
+    resolution 1920x1080@60.000Hz transform 180
+    position 0 0
+}
+output $output_sub {
+    resolution 1280x1024@75.025Hz transform 270
+    position 1920 0
+}

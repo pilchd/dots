@@ -1,0 +1,81 @@
+# -A --action
+# -Z --auto-zoom
+#    --cache-size
+# -P --cache-thumbnails
+# -f --filelist
+# -e --font
+# -C --fontpath
+# -F --fullscreen
+# -B --image-bg
+#    --info
+#    --keep-zoom-vp
+# -M --menu-font
+#    --no-jump-on-resort
+# -N --no-menus
+# -j --output-dir
+# -q --quiet
+# -. --scale-down
+# -D --slideshow-delay
+# -S --sort
+# -| --start-at
+# -T --theme
+# -t --thumbnails
+# -~ --thumb-title
+# -^ --title
+#    --zoom-step
+# -W --limit-width
+# -s --stretch
+# -E --thumb-height
+# -Y --thumb-width
+#    --no-fehbg
+
+feh \
+    -A ';[copy to _Job] mkdir -p _Job && cp %F _Job' \
+    -Z \
+    --cache-size 1024 \
+    -P \
+    -e 'Hack-Regular/9' \
+    -C /usr/share/fonts/TTF \
+    -B #323232 \
+    --info ';exiftool -d "%%Y-%%m-%%d %%H:%%M UTC" -p ~/.config/exiftool/format.fmt %F' \
+    -C /usr/share/fonts/noto \
+    -M 'NotoSans-Regular/10' \
+    --no-jump-on-resort \
+    --no-menus \
+    -j _Job \
+    -q \
+    -. \
+    -~ '%n (%w×%h) [%u/%l]' \
+    -^ '%n (%w×%h) [%u/%l]' \
+    --zoom-step 12 \
+    -W 1280 \
+    -s \
+    -E 64 \
+    -y 64 \
+    --no-fehbg
+
+thumb \
+    -A ';[copy to _Job] mkdir -p _Job && cp %F _Job' \
+    -Z \
+    --cache-size 1024 \
+    -P \
+    -e 'Hack-Regular/9' \
+    -C /usr/share/fonts/TTF \
+    -B #323232 \
+    --info ';exiftool -d "%%Y-%%m-%%d %%H:%%M UTC" -p ~/.config/exiftool/format.fmt %F' \
+    -C /usr/share/fonts/noto \
+    -M 'NotoSans-Regular/10' \
+    --no-jump-on-resort \
+    --no-menus \
+    -j _Job \
+    -q \
+    -. \
+    -t \
+    -~ '%n (%w×%h) [%u/%l]' \
+    -^ '%n (%w×%h) [%u/%l]' \
+    --zoom-step 12 \
+    -W 1280 \
+    -s \
+    -E 256 \
+    -y 256 \
+    --no-fehbg
